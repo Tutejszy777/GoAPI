@@ -1,9 +1,9 @@
 package handlers
 
 import (
+	"github.com/Tutejszy777/GoAPI/internal/middleware"
 	"github.com/go-chi/chi"
 	chimiddle "github.com/go-chi/chi/middleware"
-	"github.com/Tutejszy777/GoAPI/internal/middleware"
 )
 
 func Handler(r *chi.Mux) {
@@ -15,6 +15,6 @@ func Handler(r *chi.Mux) {
 		// Middleware for /account route
 		router.Use(middleware.Authorization)
 
-		router.Get("/coins",GetCoinBalance)
+		router.Get("/coins", GetCoinBalance)
 	})
 }
